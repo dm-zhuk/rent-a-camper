@@ -1,105 +1,51 @@
-# React homework template
+Test task
+Your task is to create an application for a company that provides camper van rental services in Ukraine.
+The application consists of 3 pages:
+1. Home page with a general description of services provided by the company. Stylization and design at your discretion.
+2. A page containing a catalog of campers of various configurations, which the user can filter by location, equipment and type
+3. A page with ads that have been added to favorites by the user
+The appearance of the application should consist of navigation (design at your discretion) and view area.
 
-This project was created with
-[Create React App](https://github.com/facebook/create-react-app). To get
-acquainted and configure additional features
-[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Technical task
+1. In accordance with the layout, implement a card announcing the rental of a camper.
+2. 4 ads should be rendered on the first page of the catalog, and the rest of them - after clicking on the Load more button.
+3. If you click on the button in the form of a "heart" on the ad card, it should be added to the list of favorites, and the color of the button should change.
+4. When updating the page, the final result of the user's actions should be recorded. That is, if you add an ad to your favorites and refresh the page, the button still remains in the "favorite ad" state with the appropriate color.
+5. In case of repeated clicking on the button in the form of a "heart", the ad should be removed from the list of favorites, and the color of the button should change to its original state.
+6. If you click on the Show more button, a modal window should open with detailed information about the camper.
+7. The modal window should be closed by clicking on the button in the form of a "cross", by clicking on the backdrop and pressing the Esc key.
+8. The modal window contains information about the features of the camper and reviews about it. Drawing information should depend on the state of the active tab.
+9. The modal window also contains a form for booking a camper, consisting of the fields name, email, booking date and comment. The fields name, email, and booking date are required to be filled in and must be checked for the validity of the entered values.
+10. The rental price must be written in one value (for example, 8000). In the UI - displayed with a comma (8000.00).
 
-## Creating a repository by template
+To work with the list of ads, create your own custom backend for development using the UI service https://mockapi.io/. Create an adverts resource. Use the resource constructor and describe the ad object as described below.
 
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
+Advert
+1. Create an advert in Mockapi with the following fields: _id, name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews (see screenshot below). You can take ads.json to populate the collection
+2. You can choose the image of the camper yourself.
+3. The database should contain at least 13 ads with different meanings (at your discretion). Implemented pagination, where one pagination page should contain 4 ads.
+Create routing using React Router
+The application must have the following routes:
+* “/” - home page with a general description of services provided by the company
+* "/catalog" - a page containing a catalog of campers of various configurations
+* “/favorites” - a page with announcements (design at your discretion) that have been added to favorites by the user
+If the user came from a route that does not exist, he must be redirected to the home page.
+Add filtering
+1. Text input, if the value of which is available, the user should be shown an ad with campers located in the corresponding location
+2. Checkboxes with the appropriate equipment - show ads with campers containing the selected equipment
+3. Radio buttons with types of campers - show ads with campers belonging to the corresponding type
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+Performance criteria
+* The layout is fixed in rh, semantic and valid
+* No errors in the browser console
+* Redux required
+* The Axios library is used for queries
+* The work is done on native JS using a bundler (Vite, Parcel, etc.) or on React
+* Interactivity works according to the specification
+* The code is formatted and uncommented
+* The repository should be described in README.md
+* The project is deployed (for example, on github pages or netlify.com)
 
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
-
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
-
-## Preparing for coding
-
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
-
-## Deploy
-
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Deployment status
-
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
-
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
-
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Live page
-
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+Delivery format:
+* Two links: to the source files and the working page on GitHub Pages or netlify.com
+* Attached repository file in zip format
