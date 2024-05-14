@@ -1,11 +1,10 @@
-/* import { configureStore } from '@reduxjs/toolkit';
-import { advertsReducer } from './advertSlice';
-import { filterReducer } from './filterSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import { advertReducer } from './advertSlice';
+// import { filterReducer } from './filterSlice';
 
 export const store = configureStore({
   reducer: {
-    adsverts: advertsReducer,
-    filter: filterReducer,
+    advert: advertReducer,
+    // filter: filterReducer,
   },
 });
- */

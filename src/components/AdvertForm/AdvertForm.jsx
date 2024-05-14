@@ -1,15 +1,14 @@
 import React from 'react';
+import CitySearch from 'components/CitySearch/CitySearch';
 import { Wrapper, Title, Description, Button } from './index';
 
 const AdvertForm = () => {
   return (
     <Wrapper>
-      <Title>Welcome to our AdvertForm Page</Title>
-      <Description>
-        Explore our wide range of vehicles for sale. We have cars, trucks, and
-        motorcycles to suit your needs.
-      </Description>
-      <Button>Shop Now</Button>
+      <Title>Welcome to the test page</Title>
+      <CitySearch />
+      <Description>Embark..</Description>
+      <Button>Show more</Button>
     </Wrapper>
   );
 };
