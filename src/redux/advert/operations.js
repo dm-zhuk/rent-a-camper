@@ -14,7 +14,7 @@ export const fetchAll = createAsyncThunk(
     }
   }
 );
-
+/* 
 export const addAdvert = createAsyncThunk(
   'advert/addAdvert',
   async (newAdvert, thunkAPI) => {
@@ -38,3 +38,4 @@ export const deleteAdvert = createAsyncThunk(
     }
   }
 );
+ */

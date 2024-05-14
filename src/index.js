@@ -12,3 +12,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
+
+/* import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from 'components/App/App';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/rent-a-camper/">
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+); */
+
+/* https://dm-zhuk.github.io/rent-a-camper/ */
