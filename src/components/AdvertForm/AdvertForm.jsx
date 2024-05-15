@@ -13,8 +13,6 @@ import {
 const AdvertForm = () => {
   return (
     <Wrapper>
-      <CitySearch />
-      <Title>Welcome to the test page</Title>
       <Description>Embark..</Description>
       <Container>
         <Favorite>

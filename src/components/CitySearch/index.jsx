@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+export const LeftSection = styled.section`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
 /* Location */
 
 export const Input = styled.input`
@@ -15,13 +22,21 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  display: inline-flex;
+  padding: 16px 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 200px;
+  color: white;
+  background: #e44848;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background: #d84343;
+  }
 `;
 
 export const InputForm = styled.div`
@@ -29,11 +44,10 @@ export const InputForm = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  gap: 16px;
 `;
 
 export const Label = styled.label`
-  margin-right: 10px;
+  margin: 24px 10px 0;
   align-self: stretch;
   color: rgba(16, 24, 40, 0.6);
   font-family: Inter;
@@ -45,7 +59,7 @@ export const Label = styled.label`
 
 export const TextField = styled.div`
   display: flex;
-  padding: 0 218px 0 18px;
+  padding: 0 68px 0 18px;
   align-items: center;
   border-radius: 10px;
   background: #f7f7f7;
@@ -59,7 +73,6 @@ export const Map = styled.img`
 export const Wrapper = styled.div`
   position: relative;
   display: flex;
-  min-width: 100px;
 `;
 
 export const TextInputContainer = styled.div`
@@ -79,8 +92,15 @@ export const NumberInputContainer = styled.div`
 `;
 
 export const VectorLine = styled.img`
+  width: 302px;
+`;
+
+export const NumberInput = styled.div`
+  display: flex;
   width: 360px;
-  height: 1px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 `;
 
 export const FiltersContainer = styled.div`
@@ -93,7 +113,33 @@ export const FiltersContainer = styled.div`
 export const FiltersButton = styled.button`
   display: flex;
   height: 95px;
-  padding: 17px 40px;
+  width: 95px;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  background-color: #fff;
+  mix-blend-mode: multiply;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border: 1px solid #e44848;
+  }
+`;
+
+export const ContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContentImg = styled.img`
+  width: 32px;
+  height: 32px;
+`;
+
+export const BodyText = styled.p`
+  max-width: 100%;
 `;

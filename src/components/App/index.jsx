@@ -1,20 +1,16 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+export const MainContainer = styled.div`
   display: flex;
-  flex-direction: column;
   padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-export const Title = styled.h1`
-  color: #101828;
-  margin-bottom: 20px;
+export const LeftColumn = styled.section`
+  flex: 1;
+  overflow: auto;
 `;
 
-export const SubTitle = styled(Title)`
-  color: #475467;
-  font-size: 18px;
-  margin-bottom: 10px;
+export const RightColumn = styled.section`
+  display: flex;
+  width: auto;
 `;
