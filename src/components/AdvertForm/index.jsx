@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 1000; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,12 +28,13 @@ export const Container = styled.div`
 export const Heart = styled.img`
   width: 24px;
   height: 24px;
-  fill: #ff0000;
+  fill: transparent;
+  /* fill: #ff0000; */
   margin-right: 8px;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute;
   top: 10px;
-  right: 10px;
+  right: 10px; */
 `;
 
 export const Favorite = styled.div`
@@ -43,7 +44,7 @@ export const Favorite = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #ff0000;
+  /* background-color: #ff0000; */
   color: #fff;
   font-size: 24px;
   font-weight: bold;
@@ -51,12 +52,12 @@ export const Favorite = styled.div`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
   }
 `;
 
 export const Wrapper = styled.div`
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   padding: 20px;
 `;
 

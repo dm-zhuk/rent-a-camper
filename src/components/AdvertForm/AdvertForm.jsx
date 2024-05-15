@@ -13,9 +13,14 @@ import {
 const AdvertForm = () => {
   return (
     <Wrapper>
+      <CitySearch />
       <Title>Welcome to the test page</Title>
       <Description>Embark..</Description>
-      <CitySearch />
+      <Container>
+        <Favorite>
+          <Heart src="../../img/heartDefault.svg" alt="Favorite" />
+        </Favorite>
+      </Container>
       <Button>Show more</Button>
 
       {/* <section class="InputForm">
