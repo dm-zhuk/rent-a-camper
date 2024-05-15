@@ -1,8 +1,6 @@
 import React from 'react';
-import CitySearch from 'components/CitySearch/CitySearch';
 import {
   Wrapper,
-  Title,
   Description,
   Button,
   Container,
