@@ -36,6 +36,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 200px;
   color: white;
+  margin-top: 48px;
   background: #e44848;
   cursor: pointer;
 
@@ -53,7 +54,7 @@ export const InputForm = styled.div`
 `;
 
 export const Label = styled.label`
-  margin: 24px 10px 0;
+  margin: 0 10px;
   align-self: stretch;
   color: rgba(16, 24, 40, 0.6);
   font-family: Inter;
@@ -69,6 +70,7 @@ export const TextField = styled.div`
   align-items: center;
   border-radius: 10px;
   background: #f7f7f7;
+  margin-bottom: 24px;
 `;
 
 export const Map = styled.img`

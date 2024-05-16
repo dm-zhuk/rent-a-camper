@@ -4,7 +4,7 @@ import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 const CardsContainer = styled.section`
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
 `;
 
@@ -35,13 +35,16 @@ const CardContent = styled.div`
   flex-shrink: 0;
 `;
 
-const CardTitleHolder = styled(CardContent)`
+const CardTitleHolder = styled.div`
+  display: flex;
+  width: 526px;
+  flex-direction: column;
   gap: 8px;
 `;
 
 const ImgThumb = styled.img`
   width: 290px;
-  height: 310px;
+  height: 320px;
   flex-shrink: 0;
   border-radius: 10px;
   background: url(<path-to-image>) lightgray -57px -4.651px / 195.679% 103.001%
@@ -50,20 +53,19 @@ const ImgThumb = styled.img`
 
 const CardTitle = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 248px;
+  align-items: center;
+  justify-content: space-between;
   align-self: stretch;
 `;
 
 const H1 = styled.h1`
+  margin: 0;
   color: #101828;
   line-height: 1.25em;
 `;
 
 const PriceFavoriteWrapper = styled.div`
   display: flex;
-  width: 158px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -73,15 +75,15 @@ const Favorite = styled(HeartDefaultIcon)`
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  fill: none;
+  stroke: #101828;
   transition: transform 0.3s ease;
   cursor: pointer;
 
   &:focus,
   &:hover {
-    border: none;
-    fill: #d84343;
-    transform: scale(1.03);
+    fill: #e44848;
+    stroke: #e44848;
+    transform: scale(1.1);
   }
 `;
 
@@ -96,6 +98,7 @@ const IconTextWrapper = styled.p`
   justify-content: center;
   align-items: center;
   gap: 4px;
+  margin: 0;
 `;
 
 const IconThumb16 = styled.img`
@@ -114,10 +117,12 @@ const BodyText = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25em;
+  margin: 0;
 `;
 
 const ReviewRate = styled.p`
   text-decoration-line: underline;
+  margin: 0;
 `;
 
 const CardAdvert = styled.p`
@@ -128,11 +133,13 @@ const CardAdvert = styled.p`
   overflow: hidden;
   color: #475467;
   text-overflow: ellipsis;
+  margin: 0;
 `;
 
 const SegmentedPicker = styled.div`
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
   align-self: stretch;
 `;
@@ -142,6 +149,7 @@ const CategoryButton = styled.button`
   padding: 12px 18px;
   align-items: center;
   gap: 8px;
+  border: none;
   border-radius: 100px;
   background: #f2f4f7;
   mix-blend-mode: multiply;
@@ -150,14 +158,13 @@ const CategoryButton = styled.button`
 
   &:focus,
   &:hover {
-    border: none;
     transform: scale(1.03);
   }
 `;
 
 const Button = styled.button`
-  display: inline-flex;
-  padding: 16px 60px;
+  display: flex;
+  padding: 16px 40px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -183,6 +190,7 @@ const LoadMore = styled.button`
   align-items: center;
   gap: 10px;
   border-radius: 200px;
+  background-color: #fff;
   border: 1px solid rgba(71, 84, 103, 0.2);
   transition: transform 0.3s ease;
   cursor: pointer;

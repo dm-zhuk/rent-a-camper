@@ -39,6 +39,7 @@ import ac from 'img/ac.svg';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
+  console.log(dispatch);
   const data = useSelector(selectAdvert);
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const AdvertForm = () => {
 
   if (!data.reviews) {
     return <div>No reviews available.</div>;
-  }
+  } // temp snippet
 
   const handleModal = () => {
     // path to modal window
@@ -73,67 +74,69 @@ const AdvertForm = () => {
   };
 
   return (
-    <>
-      <CardsContainer>
-        <CardContainer key={data._id}>
-          <CardFrame>
-            <ImgThumb src={'gallery'} alt="camper img" />
-            <CardContent>
-              <CardTitleHolder>
-                <CardTitle>
-                  <H1>{data.name}</H1>
-                  <PriceFavoriteWrapper>
-                    <H1>€{data.price}.00</H1>
-                    <Favorite />
-                  </PriceFavoriteWrapper>
-                  <ReviewLocationWrapper>
-                    <IconTextWrapper>
-                      <IconThumb16 src={star} alt="review star" />
-                      <ReviewRate>
-                        {/* {data.rating} ({data.reviews.length} reviews) */}
-                      </ReviewRate>
-                    </IconTextWrapper>
-                    <IconTextWrapper>
-                      <IconThumb16 src={map_pin} alt="map pin" />
-                      <BodyText>{data.location}</BodyText>
-                    </IconTextWrapper>
-                  </ReviewLocationWrapper>
-                </CardTitle>
-                <CardAdvert>{data.description}</CardAdvert>
-                <SegmentedPicker>
-                  <CategoryButton>
-                    <IconThumb20 src={adults} alt="adults max" />
-                    <BodyText>Adults: {data.adults}</BodyText>
-                  </CategoryButton>
-                  <CategoryButton>
-                    <IconThumb20 src={automatic} alt="transmission" />
-                    <BodyText>{data.transmission.toUpperCase()}</BodyText>
-                  </CategoryButton>
-                  <CategoryButton>
-                    <IconThumb20 src={petrol} alt="engine" />
-                    <BodyText>{data.engine.toUpperCase()}</BodyText>
-                  </CategoryButton>
-                  <CategoryButton>
-                    <IconThumb20 src={kitchen} alt="kitchen" />
-                    <BodyText>{data.kitchen} kitchen</BodyText>
-                  </CategoryButton>
-                  <CategoryButton>
-                    <IconThumb20 src={beds} alt="beds qty" />
-                    <BodyText>Beds: {data.beds}</BodyText>
-                  </CategoryButton>
-                  <CategoryButton>
-                    <IconThumb20 src={ac} alt="AC" />
-                    <BodyText>AC: {data.airConditioner} </BodyText>
-                  </CategoryButton>
-                </SegmentedPicker>
-              </CardTitleHolder>
-            </CardContent>
+    <CardsContainer>
+      <CardContainer key={data._id}>
+        <CardFrame>
+          <ImgThumb src={'gallery'} alt="camper img" />
+          <CardContent>
+            <CardTitleHolder>
+              <CardTitle>
+                <H1>{data.name}Mavericks</H1>
+                <PriceFavoriteWrapper>
+                  <H1>€{data.price}8000.00</H1>
+                  <Favorite />
+                </PriceFavoriteWrapper>
+              </CardTitle>
+              <ReviewLocationWrapper>
+                <IconTextWrapper>
+                  <IconThumb16 src={star} alt="review star" />
+                  <ReviewRate>
+                    {/* {data.rating} ({data.reviews.length} Reviews) */}4.4 (2
+                    Reviews)
+                  </ReviewRate>
+                </IconTextWrapper>
+                <IconTextWrapper>
+                  <IconThumb16 src={map_pin} alt="map pin" />
+                  <BodyText>{data.location}Kyiv, Ukraine</BodyText>
+                </IconTextWrapper>
+              </ReviewLocationWrapper>
+            </CardTitleHolder>
+            <CardAdvert>
+              {data.description}Embark on an unforgettable journey with the Road
+              Bear C 23-25, embark
+            </CardAdvert>
+            <SegmentedPicker>
+              <CategoryButton>
+                <IconThumb20 src={adults} alt="adults max" />
+                <BodyText>{data.adults}2 adults</BodyText>
+              </CategoryButton>
+              <CategoryButton>
+                <IconThumb20 src={automatic} alt="transmission" />
+                <BodyText>{data.transmission}Automatic</BodyText>
+              </CategoryButton>
+              <CategoryButton>
+                <IconThumb20 src={petrol} alt="engine" />
+                <BodyText>{data.engine}Petrol</BodyText>
+              </CategoryButton>
+              <CategoryButton>
+                <IconThumb20 src={kitchen} alt="kitchen" />
+                <BodyText>{data.kitchen}1 kitchen</BodyText>
+              </CategoryButton>
+              <CategoryButton>
+                <IconThumb20 src={beds} alt="beds qty" />
+                <BodyText>{data.beds}3 beds</BodyText>
+              </CategoryButton>
+              <CategoryButton>
+                <IconThumb20 src={ac} alt="AC" />
+                <BodyText>{data.airConditioner}1 AC</BodyText>
+              </CategoryButton>
+            </SegmentedPicker>
             <Button onClick={handleModal}>Show more</Button>
-          </CardFrame>
-        </CardContainer>
-        <LoadMore onClick={handleClick}>Load more</LoadMore>
-      </CardsContainer>
-    </>
+          </CardContent>
+        </CardFrame>
+      </CardContainer>
+      <LoadMore onClick={handleClick}>Load more</LoadMore>
+    </CardsContainer>
   );
 };
 
