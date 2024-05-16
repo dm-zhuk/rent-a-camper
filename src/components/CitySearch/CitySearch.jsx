@@ -16,6 +16,7 @@ import {
   ContentBox,
   ContentImg,
   BodyText,
+  H2,
 } from './index';
 import map_pin from 'img/map_pin.svg';
 import vector_line from 'img/vector_line.svg';
@@ -65,7 +66,7 @@ const CitySearch = () => {
         <Label htmlFor="details">Filters</Label>
       </InputForm>
       <NumberInputContainer>
-        <h2>Vehicle equipment</h2>
+        <H2>Vehicle equipment</H2>
         <VectorLine src={vector_line} alt="line" />
         <NumberInput>
           <FiltersContainer>
@@ -105,7 +106,7 @@ const CitySearch = () => {
         </NumberInput>
       </NumberInputContainer>
       <NumberInputContainer>
-        <h2>Vehicle type</h2>
+        <H2>Vehicle type</H2>
         <VectorLine src={vector_line} alt="line" />
         <NumberInput>
           <FiltersContainer>

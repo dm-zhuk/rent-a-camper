@@ -2,7 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
-import { selectVisibleAdvert } from '../../redux/advert/selectors';
+import { selectAdvert } from '../../redux/advert/selectors';
+import Loader from 'components/Loader/Loader';
 import {
   CardsContainer,
   CardContainer,
@@ -38,22 +39,27 @@ import ac from 'img/ac.svg';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
-  const data = useSelector(selectVisibleAdvert);
+  const data = useSelector(selectAdvert);
 
   useEffect(() => {
     dispatch(fetchAll());
   }, [dispatch]);
 
   if (data.loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   if (data.error) {
     return <div>Error: {data.error}</div>;
   }
 
-  const rating = data.rating;
-  const reviewCount = data.reviews.length;
+  if (!data.reviews) {
+    return <div>No reviews available.</div>;
+  }
 
   const handleModal = () => {
     // path to modal window
@@ -69,7 +75,6 @@ const AdvertForm = () => {
   return (
     <>
       <CardsContainer>
-        {/* {data.map((advert) => ( */}
         <CardContainer key={data._id}>
           <CardFrame>
             <ImgThumb src={'gallery'} alt="camper img" />
@@ -85,7 +90,7 @@ const AdvertForm = () => {
                     <IconTextWrapper>
                       <IconThumb16 src={star} alt="review star" />
                       <ReviewRate>
-                        {rating} ({reviewCount} Reviews)
+                        {/* {data.rating} ({data.reviews.length} reviews) */}
                       </ReviewRate>
                     </IconTextWrapper>
                     <IconTextWrapper>
@@ -133,15 +138,3 @@ const AdvertForm = () => {
 };
 
 export default AdvertForm;
-
-/* return (
-    <div>
-      // Access the advert data and render it
-      {data.map((advert) => (
-        <div key={advert._id}>
-          <h2>{advert.name}</h2>
-          <p>Price: {advert.price}</p>
-        </div>
-      ))}
-    </div>
-  ); */

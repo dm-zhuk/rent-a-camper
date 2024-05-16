@@ -35,6 +35,10 @@ const CardContent = styled.div`
   flex-shrink: 0;
 `;
 
+const CardTitleHolder = styled(CardContent)`
+  gap: 8px;
+`;
+
 const ImgThumb = styled.img`
   width: 290px;
   height: 310px;
@@ -42,10 +46,6 @@ const ImgThumb = styled.img`
   border-radius: 10px;
   background: url(<path-to-image>) lightgray -57px -4.651px / 195.679% 103.001%
     no-repeat;
-`;
-
-const CardTitleHolder = styled.CardContent`
-  gap: 8px;
 `;
 
 const CardTitle = styled.div`
@@ -161,6 +161,9 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: -0.08px;
   border: none;
   border-radius: 200px;
   color: white;

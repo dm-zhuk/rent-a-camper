@@ -14,11 +14,14 @@ export const Input = styled.input`
   color: #101828;
   background: #f7f7f7;
   border: none;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.25em;
+`;
+
+export const H2 = styled.h2`
+  color: #101828;
+  line-height: 1.25em;
+  margin: 0 10px;
 `;
 
 export const Button = styled.button`
@@ -27,6 +30,9 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: -0.08px;
   border: none;
   border-radius: 200px;
   color: white;
@@ -59,7 +65,7 @@ export const Label = styled.label`
 
 export const TextField = styled.div`
   display: flex;
-  padding: 0 68px 0 18px;
+  padding: 4px 118px 4px 18px;
   align-items: center;
   border-radius: 10px;
   background: #f7f7f7;
