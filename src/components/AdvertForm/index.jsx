@@ -1,83 +1,220 @@
 import styled from '@emotion/styled';
+import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 
-export const Container = styled.div`
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1000; */
-  display: flex;
+const CardsContainer = styled.section`
+  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
+  align-items: flex-start;
+  gap: 32px;
 `;
 
-export const Heart = styled.img`
+const CardContainer = styled.div`
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  background: #fff;
+`;
+
+const CardFrame = styled.div`
+  display: flex;
+  width: 840px;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  width: 526px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
+`;
+
+const ImgThumb = styled.img`
+  width: 290px;
+  height: 310px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: url(<path-to-image>) lightgray -57px -4.651px / 195.679% 103.001%
+    no-repeat;
+`;
+
+const CardTitleHolder = styled.CardContent`
+  gap: 8px;
+`;
+
+const CardTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 248px;
+  align-self: stretch;
+`;
+
+const H1 = styled.h1`
+  color: #101828;
+  line-height: 1.25em;
+`;
+
+const PriceFavoriteWrapper = styled.div`
+  display: flex;
+  width: 158px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
+
+const Favorite = styled(HeartDefaultIcon)`
   width: 24px;
   height: 24px;
-  fill: transparent;
-  /* fill: #ff0000; */
-  margin-right: 8px;
-  cursor: pointer;
-  /* position: absolute;
-  top: 10px;
-  right: 10px; */
-`;
-
-export const Favorite = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  /* background-color: #ff0000; */
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
+  flex-shrink: 0;
+  fill: none;
   transition: transform 0.3s ease;
+  cursor: pointer;
 
+  &:focus,
   &:hover {
+    border: none;
+    fill: #d84343;
     transform: scale(1.03);
   }
 `;
 
-export const Wrapper = styled.div`
-  /* background-color: #f5f5f5; */
-  padding: 20px;
+const ReviewLocationWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
 `;
 
-export const Title = styled.h1`
-  color: #333333;
-  font-size: 24px;
-  margin-bottom: 10px;
+const IconTextWrapper = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 `;
 
-export const Description = styled.p`
-  color: #666666;
+const IconThumb16 = styled.img`
+  width: 16px;
+  height: 16px;
+`;
+
+const IconThumb20 = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
+const BodyText = styled.p`
+  color: #101828;
+  text-align: center;
   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25em;
 `;
 
-export const Button = styled.button`
-  background-color: #007bff;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
+const ReviewRate = styled.p`
+  text-decoration-line: underline;
+`;
+
+const CardAdvert = styled.p`
+  display: -webkit-box;
+  width: 525px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #475467;
+  text-overflow: ellipsis;
+`;
+
+const SegmentedPicker = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+`;
+
+const CategoryButton = styled.button`
+  display: flex;
+  padding: 12px 18px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: #f2f4f7;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border: none;
+    transform: scale(1.03);
+  }
 `;
+
+const Button = styled.button`
+  display: inline-flex;
+  padding: 16px 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 200px;
+  color: white;
+  background: #e44848;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background: #d84343;
+  }
+`;
+
+const LoadMore = styled.button`
+  display: inline-flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: -0.08px;
+
+  &:focus,
+  &:hover {
+    border: 1px solid #e44848;
+    transform: scale(1.03);
+  }
+`;
+
+export {
+  CardsContainer,
+  CardContainer,
+  CardFrame,
+  CardContent,
+  ImgThumb,
+  CardTitleHolder,
+  CardTitle,
+  H1,
+  PriceFavoriteWrapper,
+  Favorite,
+  ReviewLocationWrapper,
+  IconTextWrapper,
+  IconThumb16,
+  IconThumb20,
+  ReviewRate,
+  BodyText,
+  CardAdvert,
+  SegmentedPicker,
+  CategoryButton,
+  Button,
+  LoadMore,
+};
