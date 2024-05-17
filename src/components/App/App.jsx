@@ -1,44 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { MainContainer, LeftColumn, RightColumn } from './index';
-import { fetchAll } from '../../redux/advert/operations';
-import { selectAdvert, selectLoader } from '../../redux/advert/selectors';
+import React from 'react';
+import { MainContainer, LeftSection, RightSection } from './index';
 import AdvertForm from 'components/AdvertForm/AdvertForm';
 import CitySearch from 'components/CitySearch/CitySearch';
-import ServiceList from 'components/ServiceList/ServiceList';
-// import Filter from 'components/Filter/Filter';
-import Loader from 'components/Loader/Loader';
 
 const App = () => {
-  const advert = useSelector(selectAdvert);
-  const isLoading = useSelector(selectLoader);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAll());
-  }, [dispatch]);
-
   return (
     <MainContainer>
-      <LeftColumn>
+      <LeftSection>
         <CitySearch />
-      </LeftColumn>
-      <RightColumn>
+      </LeftSection>
+      <RightSection>
         <AdvertForm />
-        {isLoading ? <Loader /> : <ServiceList advert={advert} />}
-      </RightColumn>
+      </RightSection>
     </MainContainer>
   );
 };
 
 export default App;
-
-/* return (
-    <Container>
-      <Title>✆ Phonebook ✆</Title>
-      <AdvertForm />
-      <SubTitle>advert</SubTitle>
-      <Filter />
-      {isLoading ? <Loader /> : <AdvertList advert={advert} />}
-    </Container>
-  ); */

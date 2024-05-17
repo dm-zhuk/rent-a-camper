@@ -46,9 +46,9 @@ const ImgThumb = styled.img`
   width: 290px;
   height: 320px;
   flex-shrink: 0;
+  object-fit: cover;
   border-radius: 10px;
-  background: url(<path-to-image>) lightgray -57px -4.651px / 195.679% 103.001%
-    no-repeat;
+  background: lightgray -57px -4.651px / 195.679% 103.001% no-repeat;
 `;
 
 const CardTitle = styled.div`

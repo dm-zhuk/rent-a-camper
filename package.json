@@ -5,7 +5,7 @@
   "homepage": "https://dm-zhuk.github.io/rent-a-camper/",
   "dependencies": {
     "@emotion/styled": "^11.11.5",
-    "@reduxjs/toolkit": "^2.2.4",
+    "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

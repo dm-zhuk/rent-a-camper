@@ -14,28 +14,3 @@ export const fetchAll = createAsyncThunk(
     }
   }
 );
-/* 
-export const addAdvert = createAsyncThunk(
-  'advert/addAdvert',
-  async (newAdvert, thunkAPI) => {
-    try {
-      const response = await axios.post('advert', newAdvert);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const deleteAdvert = createAsyncThunk(
-  'advert/deleteAdvert',
-  async (id, thunkAPI) => {
-    try {
-      const response = await axios.delete(`advert/${id}`);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
- */
