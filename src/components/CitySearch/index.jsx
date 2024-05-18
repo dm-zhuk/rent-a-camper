@@ -11,7 +11,6 @@ export const LeftSection = styled.section`
 
 export const Input = styled.input`
   padding: 10px;
-  color: #101828;
   background: #f7f7f7;
   border: none;
   font-weight: 400;
@@ -19,8 +18,6 @@ export const Input = styled.input`
 `;
 
 export const H2 = styled.h2`
-  color: #101828;
-  color: #101828;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2em;

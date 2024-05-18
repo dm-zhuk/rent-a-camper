@@ -28,14 +28,26 @@ import {
   CardAdvert,
   SegmentedPicker,
   BodyText,
+  CategoryText,
   CategoryButton,
   Button,
   LoadMore,
-  Layout,
-  PopUpFeatures,
-  PopUpContainer,
-  PopUpTitleHolder,
-  IconThumb32,
+  // Layout,
+  // PopUpFeatures,
+  // PopUpHeader,
+  // PopUpTitleHolder,
+  // IconThumb32,
+  // PopUpTitleContent,
+  // ImgsContainer,
+  // PopUpContentBox,
+  // AdvertFullText,
+  // FeatureReviewBox,
+  // FeatureReviewTitles,
+  // FeatureReviewTitle,
+  // FeatureSubtitle,
+  // VectorLine1,
+  // VectorLine2,
+  // FeatureBox,
 } from './index';
 
 import star from 'img/star.svg';
@@ -46,7 +58,9 @@ import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
 import beds from 'img/beds.svg';
 import ac from 'img/ac.svg';
-import close from 'img/close.svg';
+// import close from 'img/close.svg';
+// import vector_line1 from 'img/vector_line1.svg';
+// import vector_line2 from 'img/vector_line2.svg';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
@@ -78,32 +92,20 @@ const AdvertForm = () => {
   };
  */
   return (
-    <>
-      <Layout>
-        <PopUpFeatures>
-          <PopUpContainer>
-            <PopUpTitleHolder>
-              {/* <H1>{advItem.name}</H1> */}
-              <IconThumb32 src={close} alt="close icon" />
-            </PopUpTitleHolder>
-          </PopUpContainer>
-        </PopUpFeatures>
-        <CardsContainer>
-          {advert &&
-            Object.keys(advert).map(key => (
-              <CardContainer key={key}>
-                <CardFrame>
-                  {advert[key].gallery && advert[key].gallery.length > 0 && (
-                    <ImgThumb src={advert[key].gallery[0]} alt="van photo" />
-                  )}
-                  {getCardData(advert[key])}
-                </CardFrame>
-              </CardContainer>
-            ))}
-          <LoadMore>Load more</LoadMore>
-        </CardsContainer>
-      </Layout>
-    </>
+    <CardsContainer>
+      {advert &&
+        Object.keys(advert).map(key => (
+          <CardContainer key={key}>
+            <CardFrame>
+              {advert[key].gallery && advert[key].gallery.length > 0 && (
+                <ImgThumb src={advert[key].gallery[0]} alt="van photo" />
+              )}
+              {getCardData(advert[key])}
+            </CardFrame>
+          </CardContainer>
+        ))}
+      <LoadMore>Load more</LoadMore>
+    </CardsContainer>
   );
 };
 
@@ -135,27 +137,27 @@ const getCardData = advItem => {
       <SegmentedPicker>
         <CategoryButton>
           <IconThumb20 src={adults} alt="adults capacity" />
-          <BodyText>{advItem.adults} adults</BodyText>
+          <CategoryText>{advItem.adults} adults</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={automatic} alt="transmission" />
-          <BodyText>{advItem.transmission}</BodyText>
+          <CategoryText>{advItem.transmission}</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={petrol} alt="engine" />
-          <BodyText>{advItem.engine}</BodyText>
+          <CategoryText>{advItem.engine}</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={kitchen} alt="kitchen" />
-          <BodyText>{advItem.details.kitchen} Kitchen</BodyText>
+          <CategoryText>{advItem.details.kitchen} Kitchen</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={beds} alt="beds qty" />
-          <BodyText>{advItem.details.beds} beds</BodyText>
+          <CategoryText>{advItem.details.beds} beds</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={ac} alt="AC" />
-          <BodyText>{advItem.details.airConditioner} AC</BodyText>
+          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
         </CategoryButton>
       </SegmentedPicker>
       <Button>Show more</Button>

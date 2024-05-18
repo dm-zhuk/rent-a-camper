@@ -6,11 +6,10 @@ export const PopUpFeatures = styled.section`
   display: inline-flex;
   padding: 40px;
   flex-direction: column;
-  align-items: flex-end;
   gap: 24px;
 `;
 
-export const PopUpContainer = styled.section`
+export const PopUpHeader = styled.section`
   display: flex;
   width: 902px;
   flex-direction: column;
@@ -29,20 +28,100 @@ export const IconThumb32 = styled.img`
   height: 32px;
 `;
 
-/* AdvertForm */
-
-export const Layout = styled.section`
-  display: inline-flex;
+export const PopUpTitleContent = styled.div`
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 16px;
 `;
+
+export const ImgsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const PopUpContentBox = styled.div`
+  display: flex;
+  height: 1074px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
+export const AdvertFullText = styled.p`
+  width: 902px;
+  color: #475467;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 0;
+`;
+
+export const FeatureReviewBox = styled.div`
+  display: flex;
+  height: 740px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 44px;
+  flex-shrink: 0;
+  align-self: stretch;
+`;
+
+export const FeatureReviewTitles = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+`;
+
+export const FeatureSubtitle = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2em;
+  margin: 0;
+`;
+
+export const FeatureReviewTitle = styled.p`
+  ${FeatureSubtitle};
+  cursor: pointer;
+`;
+
+export const VectorLine1 = styled.img`
+  width: 902px;
+  height: 0px;
+  flex-shrink: 0;
+  stroke-width: 1px;
+  stroke: rgba(16, 24, 40, 0.2);
+`;
+
+export const VectorLine2 = styled.img`
+  width: 430px;
+  height: 0px;
+  stroke-width: 1px;
+  stroke: rgba(16, 24, 40, 0.1);
+`;
+
+export const FeatureBox = styled.div`
+  display: flex;
+  width: 430px;
+  height: 200px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+`;
+
+/* AdvertForm */
 
 export const CardsContainer = styled.section`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
+`;
+
+export const Layout = styled.section`
+  ${CardsContainer};
 `;
 
 export const CardContainer = styled.div`
@@ -131,7 +210,7 @@ export const Favorite = styled(HeartDefaultIcon)`
 
 export const ReviewLocationWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 `;
 
@@ -154,9 +233,15 @@ export const IconThumb20 = styled.img`
 `;
 
 export const BodyText = styled.p`
-  color: #101828;
-  text-align: center;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 0;
+`;
+
+export const CategoryText = styled.p`
+  font-size: 16px;
+  text-align: center;
   font-weight: 500;
   line-height: 1.25em;
   margin: 0;
@@ -176,6 +261,10 @@ export const CardAdvert = styled.p`
   color: #475467;
   text-overflow: ellipsis;
   margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
 `;
 
 export const SegmentedPicker = styled.div`
@@ -196,12 +285,6 @@ export const CategoryButton = styled.button`
   background: #f2f4f7;
   mix-blend-mode: multiply;
   transition: transform 0.3s ease;
-  cursor: pointer;
-
-  &:focus,
-  &:hover {
-    transform: scale(1.03);
-  }
 `;
 
 export const Button = styled.button`
