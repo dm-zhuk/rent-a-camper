@@ -1,36 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 
-/* PopUpFeatures */
-export const PopUpFeatures = styled.section`
-  display: inline-flex;
-  padding: 40px;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 24px;
-`;
-
-export const PopUpContainer = styled.section`
-  display: flex;
-  width: 902px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-`;
-
-export const PopUpTitleHolder = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 742px;
-`;
-
-export const IconThumb32 = styled.img`
-  width: 32px;
-  height: 32px;
-`;
-
-/* AdvertForm */
-
 export const Layout = styled.section`
   display: inline-flex;
   flex-direction: column;
@@ -271,5 +241,4 @@ export {
   Button,
   LoadMore,
   Layout,
-};
- */
+}; */

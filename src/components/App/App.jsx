@@ -5,14 +5,16 @@ import CitySearch from 'components/CitySearch/CitySearch';
 
 const App = () => {
   return (
-    <MainContainer>
-      <LeftSection>
-        <CitySearch />
-      </LeftSection>
-      <RightSection>
-        <AdvertForm />
-      </RightSection>
-    </MainContainer>
+    <>
+      <MainContainer>
+        <LeftSection>
+          <CitySearch />
+        </LeftSection>
+        <RightSection>
+          <AdvertForm />
+        </RightSection>
+      </MainContainer>
+    </>
   );
 };
 

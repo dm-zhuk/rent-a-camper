@@ -1,14 +1,16 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectAdvert } from '../../redux/advert/selectors';
 import { fetchAll } from '../../redux/advert/operations';
-import {
-  selectAdvert,
-  selectLoader,
-  selectError,
-} from '../../redux/advert/selectors';
-// import PopUpFeatures from 'components/PopUpFeatures/PopUpFeatures';
-import Loader from 'components/Loader/Loader';
+import star from 'img/star.svg';
+import map_pin from 'img/map_pin.svg';
+import adults from 'img/adults.svg';
+import automatic from 'img/automatic.svg';
+import petrol from 'img/petrol.svg';
+import kitchen from 'img/kitchen.svg';
+import beds from 'img/beds.svg';
+import ac from 'img/ac.svg';
 import {
   CardsContainer,
   CardContainer,
@@ -32,62 +34,20 @@ import {
   Button,
   LoadMore,
   Layout,
-  PopUpFeatures,
-  PopUpContainer,
-  PopUpTitleHolder,
-  IconThumb32,
 } from './index';
 
-import star from 'img/star.svg';
-import map_pin from 'img/map_pin.svg';
-import adults from 'img/adults.svg';
-import automatic from 'img/automatic.svg';
-import petrol from 'img/petrol.svg';
-import kitchen from 'img/kitchen.svg';
-import beds from 'img/beds.svg';
-import ac from 'img/ac.svg';
-import close from 'img/close.svg';
-
-const AdvertForm = () => {
+const PopUpFeatures = () => {
   const dispatch = useDispatch();
   const advert = useSelector(selectAdvert);
-  const isLoading = useSelector(selectLoader);
-  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchAll());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-  /* 
-  const handleModal = () => {
-    // path to modal window
-    console.log('Opening modal window:', handleModal);
-    ////
-  };
-
-  const handleClick = () => {
-    ////
-    console.log('Next page opened', handleClick);
-  };
- */
   return (
     <>
       <Layout>
-        <PopUpFeatures>
-          <PopUpContainer>
-            <PopUpTitleHolder>
-              {/* <H1>{advItem.name}</H1> */}
-              <IconThumb32 src={close} alt="close icon" />
-            </PopUpTitleHolder>
-          </PopUpContainer>
-        </PopUpFeatures>
+        <PopUpFeatures />
         <CardsContainer>
           {advert &&
             Object.keys(advert).map(key => (
@@ -163,6 +123,4 @@ const getCardData = advItem => {
   );
 };
 
-export default AdvertForm;
-
-/* <Button onClick={handleModal}>Show more</Button> */
+export default PopUpFeatures;

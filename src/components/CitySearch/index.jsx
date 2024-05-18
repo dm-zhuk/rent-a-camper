@@ -20,7 +20,10 @@ export const Input = styled.input`
 
 export const H2 = styled.h2`
   color: #101828;
-  line-height: 1.25em;
+  color: #101828;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2em;
   margin: 0 10px;
 `;
 
