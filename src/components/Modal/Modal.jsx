@@ -7,7 +7,6 @@ import {
   selectLoader,
   selectError,
 } from '../../redux/advert/selectors';
-// import Modal from 'components/Modal/Modal';
 import Loader from 'components/Loader/Loader';
 import {
   CardsContainer,
@@ -49,7 +48,7 @@ import {
   VectorLine2,
   FeatureBox,
   CardContainerModal,
-} from './index';
+} from '../AdvertForm/index';
 
 import star from 'img/star.svg';
 import map_pin from 'img/map_pin.svg';
@@ -67,31 +66,20 @@ import radio from 'img/radio.svg';
 import cd from 'img/cd.svg';
 import hob from 'img/hob.svg';
 
-const AdvertForm = () => {
+const Modal = () => {
   const dispatch = useDispatch();
   const advert = useSelector(selectAdvert);
   const isLoading = useSelector(selectLoader);
   const error = useSelector(selectError);
 
-  const [cards, setCards] = useState({});
-
   useEffect(() => {
     dispatch(fetchAll());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (advert) {
-      setCards(advert);
-    }
-  }, [advert]);
 
   if (isLoading) {
     return <Loader />;
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
   /* 
   const handleadvert = () => {
     // path to advert window
@@ -106,84 +94,17 @@ const AdvertForm = () => {
  */
 
   return (
-    <CardsContainer>
+    <CardContainerModal>
       {advert &&
         Object.keys(advert).map(key => (
           <>
-            {/* <CardContainerModal key={key}>
-              {getCardData1(advert[key])}
-            </CardContainerModal> */}
-            <CardContainer key={key}>
-              <CardFrame>
-                {advert[key].gallery && advert[key].gallery.length > 0 && (
-                  <ImgThumb src={advert[key].gallery[0]} alt="van photo" />
-                )}
-                {getCardData(advert[key])}
-              </CardFrame>
-            </CardContainer>
+            <PopUpFeatures key={key}>{getCardData1(advert[key])}</PopUpFeatures>
           </>
         ))}
-      <LoadMore>Load more</LoadMore>
-    </CardsContainer>
+    </CardContainerModal>
   );
 };
 
-const getCardData = advert => {
-  return (
-    <CardContent>
-      <CardTitleHolder>
-        <CardTitle>
-          <H1>{advert.name}</H1>
-          <PriceFavoriteWrapper>
-            <H1>€{advert.price},00</H1>
-            <Favorite />
-          </PriceFavoriteWrapper>
-        </CardTitle>
-        <ReviewLocationWrapper>
-          <IconTextWrapper>
-            <IconThumb16 src={star} alt="review star" />
-            <ReviewRate>
-              {advert.rating} ({advert.reviews.length} Reviews)
-            </ReviewRate>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <IconThumb16 src={map_pin} alt="map pin" />
-            <BodyText>{advert.location}</BodyText>
-          </IconTextWrapper>
-        </ReviewLocationWrapper>
-      </CardTitleHolder>
-      <CardAdvert>{advert.description}</CardAdvert>
-      <SegmentedPicker>
-        <CategoryButton>
-          <IconThumb20 src={adults} alt="adults capacity" />
-          <CategoryText>{advert.adults} adults</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={automatic} alt="transmission" />
-          <CategoryText>{advert.transmission}</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={petrol} alt="engine" />
-          <CategoryText>{advert.engine}</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={kitchen} alt="kitchen" />
-          <CategoryText>{advert.details.kitchen} Kitchen</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={beds} alt="beds qty" />
-          <CategoryText>{advert.details.beds} beds</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={ac} alt="AC" />
-          <CategoryText>{advert.details.airConditioner} AC</CategoryText>
-        </CategoryButton>
-      </SegmentedPicker>
-      <Button>Show more</Button>
-    </CardContent>
-  );
-};
-/* 
 const getCardData1 = advert => {
   return (
     <CardContainerModal>
@@ -210,11 +131,17 @@ const getCardData1 = advert => {
           </PopUpTitleContent>
         </PopUpHeader>
         <PopUpContentBox>
-          <ImgsContainer>
-            <ImgThumb src="" alt="van photos" />
-          </ImgsContainer>
+          <>
+            {advert.gallery && advert.gallery.length > 0 && (
+              <ImgsContainer>
+                {advert.gallery.map((img, index) => (
+                  <ImgThumb key={index} src={img} alt="van photo" />
+                ))}
+              </ImgsContainer>
+            )}
+          </>
           <AdvertFullText>{advert.description}</AdvertFullText>
-          <FeatureReviewBox>
+          {/* <FeatureReviewBox>
             <FeatureReviewTitles>
               <FeatureReviewTitle>Features</FeatureReviewTitle>
               <FeatureReviewTitle>Reviews</FeatureReviewTitle>
@@ -264,13 +191,13 @@ const getCardData1 = advert => {
                 <CategoryText>{advert.hob} hobs</CategoryText>
               </CategoryButton>
             </FeatureBox>
-          </FeatureReviewBox>
+          </FeatureReviewBox> */}
         </PopUpContentBox>
       </PopUpFeatures>
     </CardContainerModal>
   );
 };
- */
-export default AdvertForm;
+
+export default Modal;
 
 /* <Button onClick={handleModal}>Show more</Button> */

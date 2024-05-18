@@ -2,6 +2,11 @@ import styled from '@emotion/styled';
 import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 
 /* PopUpFeatures */
+export const CardContainerModal = styled.section`
+  display: inline-flex;
+  flex-direction: column;
+`;
+
 export const PopUpFeatures = styled.section`
   display: inline-flex;
   padding: 40px;
@@ -19,13 +24,14 @@ export const PopUpHeader = styled.section`
 
 export const PopUpTitleHolder = styled.div`
   display: flex;
-  align-items: flex-start;
-  gap: 742px;
+  align-self: stretch;
+  justify-content: space-between;
 `;
 
 export const IconThumb32 = styled.img`
   width: 32px;
   height: 32px;
+  cursor: pointer;
 `;
 
 export const PopUpTitleContent = styled.div`
@@ -37,8 +43,8 @@ export const PopUpTitleContent = styled.div`
 
 export const ImgsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 16px;
 `;
 
 export const PopUpContentBox = styled.div`
