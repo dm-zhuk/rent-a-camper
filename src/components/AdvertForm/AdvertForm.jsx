@@ -1,5 +1,7 @@
 import React, { useEffect, useState, memo } from 'react';
-import getCardData from '../partials/CardData';
+import CardData from '../partials/CardData';
+// import ShowMoreModal from '../partials/ShowMore';
+// import CardModalData from '../Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
 import {
@@ -55,7 +57,7 @@ const AdvertForm = () => {
                 {card.gallery && card.gallery.length > 0 && (
                   <ImgThumb src={card.gallery[0]} alt="van photo" />
                 )}
-                {getCardData(card)}
+                {CardData(card)}
               </CardFrame>
             </MemoizedCardContainer>
           ))}
@@ -68,3 +70,14 @@ const AdvertForm = () => {
 };
 
 export default AdvertForm;
+
+//   {renderedCards &&
+//     renderedCards.map(card => <ShowMoreModal advItem={card} />);
+// }
+
+/* {renderedCards &&
+          renderedCards.map(card => (
+            <MemoizedCardContainer key={card._id}>
+              <CardFrame>{CardModalData(card)}</CardFrame>
+            </MemoizedCardContainer>
+          ))} */

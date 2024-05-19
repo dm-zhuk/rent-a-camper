@@ -1,3 +1,5 @@
+import ShowMoreModal from '../partials/ShowMore';
+
 import {
   CardContent,
   CardTitleHolder,
@@ -16,22 +18,6 @@ import {
   CategoryText,
   CategoryButton,
   Button,
-  // Layout,
-  // PopUpFeatures,
-  // PopUpHeader,
-  // PopUpTitleHolder,
-  // IconThumb32,
-  // PopUpTitleContent,
-  // ImgsContainer,
-  // PopUpContentBox,
-  // AdvertFullText,
-  // FeatureReviewBox,
-  // FeatureReviewTitles,
-  // FeatureReviewTitle,
-  // FeatureSubtitle,
-  // VectorLine1,
-  // VectorLine2,
-  // FeatureBox,
 } from '../AdvertForm/index';
 
 import star from 'img/star.svg';
@@ -42,16 +28,9 @@ import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
 import beds from 'img/beds.svg';
 import ac from 'img/ac.svg';
-import airConditioner from 'img/airConditioner.svg';
 import shower from 'img/shower.svg';
-import close from 'img/close.svg';
-import vector_line1 from 'img/vector_line1.svg';
-import vector_line2 from 'img/vector_line2.svg';
-import radio from 'img/radio.svg';
-import cd from 'img/cd.svg';
-import hob from 'img/hob.svg';
 
-const getCardData = advItem => {
+const CardData = advItem => {
   return (
     <CardContent>
       <CardTitleHolder>
@@ -106,9 +85,9 @@ const getCardData = advItem => {
           <CategoryText>{advItem.details.shower} shower</CategoryText>
         </CategoryButton>
       </SegmentedPicker>
-      <Button>Show more</Button>
+      <Button onClick={ShowMoreModal}>Show more</Button>
     </CardContent>
   );
 };
 
-export default getCardData;
+export default CardData;

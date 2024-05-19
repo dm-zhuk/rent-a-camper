@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+// import CardModalData from '../Modal/Modal';
+import { Button, H1 } from '../AdvertForm/index';
 
-const ShowMoreModal = ({ car }) => {
+const ShowMoreModal = ({ advItem }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -15,21 +17,10 @@ const ShowMoreModal = ({ car }) => {
     <>
       <Button onClick={handleOpen}>Show more</Button>
       {isOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h2>{car.name}</h2>
-            </div>
-            <div className="modal-body">
-              <p>{car.description}</p>
-              <p>{car.price}</p>
-            </div>
-            <div className="modal-footer">
-              <button onClick={handleClose}>Close</button>
-            </div>
-          </div>
-        </div>
+        <button onClick={handleClose}>{advItem.name}</button>
+        // {CardModalData(data)}
       )}
+      ;
     </>
   );
 };

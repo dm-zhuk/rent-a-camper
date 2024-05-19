@@ -1,13 +1,3 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAll } from '../../redux/advert/operations';
-import {
-  selectAdvert,
-  selectLoader,
-  selectError,
-} from '../../redux/advert/selectors';
-import Loader from 'components/Loader/Loader';
 import {
   CardsContainer,
   CardContainer,
@@ -31,11 +21,11 @@ import {
   CategoryButton,
   Button,
   LoadMore,
-  // Layout,
+  Layout,
   PopUpFeatures,
   PopUpHeader,
   PopUpTitleHolder,
-  IconThumb32,
+  CloseBtn32,
   PopUpTitleContent,
   ImgsContainer,
   PopUpContentBox,
@@ -66,67 +56,42 @@ import radio from 'img/radio.svg';
 import cd from 'img/cd.svg';
 import hob from 'img/hob.svg';
 
-const Modal = () => {
-  const dispatch = useDispatch();
-  const advert = useSelector(selectAdvert);
-  const isLoading = useSelector(selectLoader);
-
-  useEffect(() => {
-    dispatch(fetchAll());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  return (
-    <CardContainerModal>
-      {advert &&
-        Object.keys(advert).map(key => (
-          <>
-            <PopUpFeatures key={key}>{getCardData1(advert[key])}</PopUpFeatures>
-          </>
-        ))}
-    </CardContainerModal>
-  );
-};
-
-const getCardData1 = advert => {
+const CardModalData = advItem => {
   return (
     <CardContainerModal>
       <PopUpFeatures>
         <PopUpHeader>
           <PopUpTitleHolder>
-            <H1>{advert.name}</H1>
-            <IconThumb32 src={close} alt="close icon" />
+            <H1>{advItem.name}</H1>
+            <CloseBtn32 src={close} alt="close icon" />
           </PopUpTitleHolder>
           <PopUpTitleContent>
             <ReviewLocationWrapper>
               <IconTextWrapper>
                 <IconThumb16 src={star} alt="review star" />
                 <ReviewRate>
-                  {advert.rating} ({advert.reviews.length} Reviews)
+                  {advItem.rating} ({advItem.reviews.length} Reviews)
                 </ReviewRate>
               </IconTextWrapper>
               <IconTextWrapper>
                 <IconThumb16 src={map_pin} alt="map pin" />
-                <BodyText>{advert.location}</BodyText>
+                <BodyText>{advItem.location}</BodyText>
               </IconTextWrapper>
             </ReviewLocationWrapper>
-            <H1>€{advert.price},00</H1>
+            <H1>€{advItem.price},00</H1>
           </PopUpTitleContent>
         </PopUpHeader>
         <PopUpContentBox>
           <>
-            {advert.gallery && advert.gallery.length > 0 && (
+            {advItem.gallery && advItem.gallery.length > 0 && (
               <ImgsContainer>
-                {advert.gallery.map(img => (
+                {advItem.gallery.map(img => (
                   <ImgThumb key={img._id} src={img} alt="van photo" />
                 ))}
               </ImgsContainer>
             )}
           </>
-          <AdvertFullText>{advert.description}</AdvertFullText>
+          <AdvertFullText>{advItem.description}</AdvertFullText>
           <FeatureReviewBox>
             <FeatureReviewTitles>
               <FeatureReviewTitle>Features</FeatureReviewTitle>
@@ -136,45 +101,45 @@ const getCardData1 = advert => {
             <FeatureBox>
               <CategoryButton>
                 <IconThumb20 src={adults} alt="adults capacity" />
-                <CategoryText>{advert.adults} adults</CategoryText>
+                <CategoryText>{advItem.adults} adults</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={automatic} alt="transmission" />
-                <CategoryText>{advert.transmission}</CategoryText>
+                <CategoryText>{advItem.transmission}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={ac} alt="AC" />
-                <CategoryText>{advert.details.airConditioner} AC</CategoryText>
+                <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={petrol} alt="engine" />
-                <CategoryText>{advert.engine}</CategoryText>
+                <CategoryText>{advItem.engine}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={kitchen} alt="kitchen" />
-                <CategoryText>{advert.details.kitchen} Kitchen</CategoryText>
+                <CategoryText>{advItem.details.kitchen} Kitchen</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={beds} alt="beds qty" />
-                <CategoryText>{advert.details.beds} beds</CategoryText>
+                <CategoryText>{advItem.details.beds} beds</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={airConditioner} alt="AC2" />
                 <CategoryText>
-                  {advert.details.airConditioner} air conditioner
+                  {advItem.details.airConditioner} air conditioner
                 </CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={cd} alt="CD" />
-                <CategoryText>{advert.details.cd}</CategoryText>
+                <CategoryText>{advItem.details.cd}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={radio} alt="radio" />
-                <CategoryText>{advert.details.radio}</CategoryText>
+                <CategoryText>{advItem.details.radio}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={hob} alt="hob" />
-                <CategoryText>{advert.details.hob} hobs</CategoryText>
+                <CategoryText>{advItem.details.hob} hobs</CategoryText>
               </CategoryButton>
             </FeatureBox>
           </FeatureReviewBox>
@@ -184,6 +149,5 @@ const getCardData1 = advert => {
   );
 };
 
-export default Modal;
-
-/* <Button onClick={handleModal}>Show more</Button> */
+export default CardModalData;
+// import CardModalData from '../Modal/Modal';

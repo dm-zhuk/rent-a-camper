@@ -2,7 +2,8 @@ import React from 'react';
 import { MainContainer, LeftSection, RightSection } from './index';
 import AdvertForm from 'components/AdvertForm/AdvertForm';
 import CitySearch from 'components/CitySearch/CitySearch';
-import Modal from 'components/Modal/Modal';
+import CardModalData from '../Modal/Modal';
+// import ServiceList from 'components/ServiceList/ServiceList';
 
 const App = () => {
   return (
@@ -14,8 +15,8 @@ const App = () => {
         <RightSection>
           <AdvertForm />
         </RightSection>
-        {/* <Modal /> */}
       </MainContainer>
+      <CardModalData />
     </>
   );
 };
