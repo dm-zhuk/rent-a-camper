@@ -8,13 +8,13 @@ const App = () => {
   return (
     <>
       <MainContainer>
-        {/* <LeftSection>
+        <LeftSection>
           <CitySearch />
         </LeftSection>
         <RightSection>
           <AdvertForm />
-        </RightSection> */}
-        <Modal />
+        </RightSection>
+        {/* <Modal /> */}
       </MainContainer>
     </>
   );

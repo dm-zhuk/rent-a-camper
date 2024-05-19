@@ -112,7 +112,6 @@ export const FeatureBox = styled.div`
   width: 430px;
   height: 200px;
   align-items: flex-start;
-  align-content: flex-start;
   gap: 8px;
   flex-wrap: wrap;
 `;

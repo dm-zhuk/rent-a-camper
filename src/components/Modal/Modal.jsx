@@ -70,7 +70,6 @@ const Modal = () => {
   const dispatch = useDispatch();
   const advert = useSelector(selectAdvert);
   const isLoading = useSelector(selectLoader);
-  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchAll());
@@ -79,19 +78,6 @@ const Modal = () => {
   if (isLoading) {
     return <Loader />;
   }
-
-  /* 
-  const handleadvert = () => {
-    // path to advert window
-    console.log('Opening advert window:', handleadvert);
-    ////
-  };
-
-  const handleClick = () => {
-    ////
-    console.log('Next page opened', handleClick);
-  };
- */
 
   return (
     <CardContainerModal>
@@ -134,14 +120,14 @@ const getCardData1 = advert => {
           <>
             {advert.gallery && advert.gallery.length > 0 && (
               <ImgsContainer>
-                {advert.gallery.map((img, index) => (
-                  <ImgThumb key={index} src={img} alt="van photo" />
+                {advert.gallery.map(img => (
+                  <ImgThumb key={img._id} src={img} alt="van photo" />
                 ))}
               </ImgsContainer>
             )}
           </>
           <AdvertFullText>{advert.description}</AdvertFullText>
-          {/* <FeatureReviewBox>
+          <FeatureReviewBox>
             <FeatureReviewTitles>
               <FeatureReviewTitle>Features</FeatureReviewTitle>
               <FeatureReviewTitle>Reviews</FeatureReviewTitle>
@@ -175,23 +161,23 @@ const getCardData1 = advert => {
               <CategoryButton>
                 <IconThumb20 src={airConditioner} alt="AC2" />
                 <CategoryText>
-                  {advert.airConditioner} air conditioner
+                  {advert.details.airConditioner} air conditioner
                 </CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={cd} alt="CD" />
-                <CategoryText>{advert.cd}</CategoryText>
+                <CategoryText>{advert.details.cd}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={radio} alt="radio" />
-                <CategoryText>{advert.radio}</CategoryText>
+                <CategoryText>{advert.details.radio}</CategoryText>
               </CategoryButton>
               <CategoryButton>
                 <IconThumb20 src={hob} alt="hob" />
-                <CategoryText>{advert.hob} hobs</CategoryText>
+                <CategoryText>{advert.details.hob} hobs</CategoryText>
               </CategoryButton>
             </FeatureBox>
-          </FeatureReviewBox> */}
+          </FeatureReviewBox>
         </PopUpContentBox>
       </PopUpFeatures>
     </CardContainerModal>
