@@ -62,7 +62,8 @@ const CardModalData = advItem => {
       <PopUpFeatures>
         <PopUpHeader>
           <PopUpTitleHolder>
-            <H1>{advItem.name}</H1>
+            <H1>NAME</H1>
+            {/* <H1>{advItem.name}</H1> */}
             <CloseBtn32 src={close} alt="close icon" />
           </PopUpTitleHolder>
           <PopUpTitleContent>
