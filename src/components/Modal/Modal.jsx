@@ -1,4 +1,5 @@
 import React from 'react';
+// import ShowReviews from '../../helpers/ShowReviews';
 import {
   ImgThumb,
   H1,
@@ -42,14 +43,6 @@ import {
   Input,
   TextArea,
   DatePicker,
-  ReviewsContent,
-  ReviewsTxt,
-  ReviewsHeader,
-  ReviewsAvatar,
-  ReviewsAvatarInitial,
-  ReviewerNameRate,
-  ReviewerName,
-  ReviewerRate,
 } from '../AdvertForm/index';
 
 import star from 'img/star.svg';
@@ -71,8 +64,6 @@ import hob from 'img/hob.svg';
 import calendar from 'img/calendar.svg';
 
 const CardModalData = modal => {
-  const reviewerName = modal.reviewer_name;
-  const firstLetter = reviewerName.charAt(0).toUpperCase();
   return (
     <CardContainerModal>
       <ModalFeatures>
@@ -257,21 +248,7 @@ const CardModalData = modal => {
           </FeatureReviewVerBox>
         </ModalContentBox>
       </ModalFeatures>
-      <TxtFieldBox>
-        {/* Reviews snippet */}
-        <ReviewsContent>
-          <ReviewsHeader>
-            <ReviewsAvatar>
-              <ReviewsAvatarInitial>{firstLetter}</ReviewsAvatarInitial>
-            </ReviewsAvatar>
-            <ReviewerNameRate>
-              <ReviewerName>{modal.reviewer_name}</ReviewerName>
-              <ReviewerRate>{modal.reviewer_rating}</ReviewerRate>
-            </ReviewerNameRate>
-          </ReviewsHeader>
-          <ReviewsTxt>{modal.comment}</ReviewsTxt>
-        </ReviewsContent>
-      </TxtFieldBox>
+      <TxtFieldBox></TxtFieldBox>
     </CardContainerModal>
   );
 };
@@ -282,6 +259,3 @@ export default CardModalData;
 //  <Input type="text" onChange={handleChange} />
 
 //  <Button onClick={handleSubmit}>Send</Button>
-
-/* 
-                  {modal.rating} ({modal.reviews.length} Reviews) */

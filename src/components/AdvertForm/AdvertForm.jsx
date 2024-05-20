@@ -1,7 +1,6 @@
 import React, { useEffect, useState, memo } from 'react';
-import CardData from '../../helpers/CardData';
-// import ShowMoreModal from '../helpers/ShowMore';
-// import CardModalData from '../Modal/Modal';
+// import CardData from '../../helpers/CardData';
+import Card from '../../helpers/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
 import {
@@ -10,13 +9,7 @@ import {
   selectError,
 } from '../../redux/advert/selectors';
 import Loader from 'components/Loader/Loader';
-import {
-  CardsContainer,
-  CardContainer,
-  CardFrame,
-  ImgThumb,
-  LoadMore,
-} from './index';
+import { CardsContainer, CardContainer, LoadMore } from './index';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
@@ -50,12 +43,7 @@ const AdvertForm = () => {
         {renderedCards &&
           renderedCards.map(card => (
             <MemoizedCardContainer key={card._id}>
-              <CardFrame>
-                {card.gallery && card.gallery.length > 0 && (
-                  <ImgThumb src={card.gallery[0]} alt="van photo" />
-                )}
-                {CardData(card)}
-              </CardFrame>
+              <Card card={card} />
             </MemoizedCardContainer>
           ))}
         {Object.values(cards).length > endIndex && (

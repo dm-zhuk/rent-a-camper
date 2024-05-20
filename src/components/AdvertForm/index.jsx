@@ -71,6 +71,13 @@ export const H1 = styled.h1`
   line-height: 1.25em;
 `;
 
+export const H2 = styled.h2`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2em;
+  margin: 0 10px;
+`;
+
 export const PriceFavoriteWrapper = styled.div`
   display: flex;
   justify-content: center;
