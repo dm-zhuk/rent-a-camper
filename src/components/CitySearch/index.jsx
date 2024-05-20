@@ -15,6 +15,7 @@ export const Input = styled.input`
   border: none;
   font-weight: 400;
   line-height: 1.25em;
+  color: rgba(16, 24, 40, 0.6);
 `;
 
 export const H2 = styled.h2`

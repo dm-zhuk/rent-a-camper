@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import CardModalData from '../Modal/Modal';
-import { Button, H1 } from '../AdvertForm/index';
+import { Button } from '../components/AdvertForm/index';
 
 const ShowMoreModal = ({ advItem }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, memo } from 'react';
-import CardData from '../partials/CardData';
-// import ShowMoreModal from '../partials/ShowMore';
+import CardData from '../../helpers/CardData';
+// import ShowMoreModal from '../helpers/ShowMore';
 // import CardModalData from '../Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
@@ -36,10 +36,6 @@ const AdvertForm = () => {
 
   const MemoizedCardContainer = memo(CardContainer);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
 
@@ -48,7 +44,8 @@ const AdvertForm = () => {
 
   return (
     <>
-      {error && <div>Error: {error}</div>}
+      {isLoading && <Loader />}
+      {error && <b>Error: {error}</b>}
       <CardsContainer>
         {renderedCards &&
           renderedCards.map(card => (
@@ -70,14 +67,3 @@ const AdvertForm = () => {
 };
 
 export default AdvertForm;
-
-//   {renderedCards &&
-//     renderedCards.map(card => <ShowMoreModal advItem={card} />);
-// }
-
-/* {renderedCards &&
-          renderedCards.map(card => (
-            <MemoizedCardContainer key={card._id}>
-              <CardFrame>{CardModalData(card)}</CardFrame>
-            </MemoizedCardContainer>
-          ))} */

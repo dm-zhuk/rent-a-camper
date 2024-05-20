@@ -8,20 +8,20 @@ export const Layout = styled.section`
   gap: 32px;
 `;
 
-/* PopUpFeatures */
+/* ModalFeatures */
 export const CardContainerModal = styled.section`
   display: inline-flex;
   flex-direction: column;
 `;
 
-export const PopUpFeatures = styled.section`
+export const ModalFeatures = styled.section`
   display: inline-flex;
   padding: 40px;
   flex-direction: column;
   gap: 24px;
 `;
 
-export const PopUpHeader = styled.section`
+export const ModalHeader = styled.section`
   display: flex;
   width: 902px;
   flex-direction: column;
@@ -29,7 +29,7 @@ export const PopUpHeader = styled.section`
   gap: 8px;
 `;
 
-export const PopUpTitleHolder = styled.div`
+export const ModalTitleHolder = styled.div`
   display: flex;
   align-self: stretch;
   justify-content: space-between;
@@ -41,7 +41,7 @@ export const IconThumb32 = styled.img`
   cursor: pointer;
 `;
 
-export const PopUpTitleContent = styled.div`
+export const ModalTitleContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -54,7 +54,7 @@ export const ImgsContainer = styled.div`
   gap: 16px;
 `;
 
-export const PopUpContentBox = styled.div`
+export const ModalContentBox = styled.div`
   display: flex;
   height: 1074px;
   flex-direction: column;
@@ -71,7 +71,7 @@ export const AdvertFullText = styled.p`
   margin: 0;
 `;
 
-export const FeatureReviewBox = styled.div`
+export const FeatureReviewVerBox = styled.div`
   display: flex;
   height: 740px;
   flex-direction: column;
@@ -114,7 +114,7 @@ export const VectorLine2 = styled.img`
   stroke: rgba(16, 24, 40, 0.1);
 `;
 
-export const FeatureBox = styled.div`
+export const FeatureTagsBox = styled.div`
   display: flex;
   width: 430px;
   height: 200px;

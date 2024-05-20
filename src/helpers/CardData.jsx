@@ -1,4 +1,4 @@
-import ShowMoreModal from '../partials/ShowMore';
+import ShowMoreModal from './ShowMore';
 
 import {
   CardContent,
@@ -18,7 +18,7 @@ import {
   CategoryText,
   CategoryButton,
   Button,
-} from '../AdvertForm/index';
+} from '../components/AdvertForm/index';
 
 import star from 'img/star.svg';
 import map_pin from 'img/map_pin.svg';
@@ -82,7 +82,7 @@ const CardData = advItem => {
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={shower} alt="shower" />
-          <CategoryText>{advItem.details.shower} shower</CategoryText>
+          <CategoryText>{advItem.details.shower} Shower</CategoryText>
         </CategoryButton>
       </SegmentedPicker>
       <Button onClick={ShowMoreModal}>Show more</Button>

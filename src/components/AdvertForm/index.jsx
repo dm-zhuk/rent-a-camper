@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from '@emotion/styled';
 import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 
@@ -220,20 +221,20 @@ export const LoadMore = styled.button`
   }
 `;
 
-/* PopUpFeatures */
+/* ModalFeatures */
 export const CardContainerModal = styled.section`
   display: inline-flex;
   flex-direction: column;
 `;
 
-export const PopUpFeatures = styled.section`
+export const ModalFeatures = styled.section`
   display: inline-flex;
   padding: 40px;
   flex-direction: column;
   gap: 24px;
 `;
 
-export const PopUpHeader = styled.section`
+export const ModalHeader = styled.section`
   display: flex;
   width: 902px;
   flex-direction: column;
@@ -241,7 +242,7 @@ export const PopUpHeader = styled.section`
   gap: 8px;
 `;
 
-export const PopUpTitleHolder = styled.div`
+export const ModalTitleHolder = styled.div`
   display: flex;
   align-self: stretch;
   justify-content: space-between;
@@ -254,7 +255,7 @@ export const CloseBtn32 = styled.button`
   cursor: pointer;
 `;
 
-export const PopUpTitleContent = styled.div`
+export const ModalTitleContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -267,7 +268,7 @@ export const ImgsContainer = styled.div`
   gap: 16px;
 `;
 
-export const PopUpContentBox = styled.div`
+export const ModalContentBox = styled.div`
   display: flex;
   height: 1074px;
   flex-direction: column;
@@ -284,7 +285,7 @@ export const AdvertFullText = styled.p`
   margin: 0;
 `;
 
-export const FeatureReviewBox = styled.div`
+export const FeatureReviewVerBox = styled.div`
   display: flex;
   height: 740px;
   flex-direction: column;
@@ -292,6 +293,20 @@ export const FeatureReviewBox = styled.div`
   gap: 44px;
   flex-shrink: 0;
   align-self: stretch;
+`;
+
+export const FeatureReviewHorBox = styled.div`
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 24px;
+`;
+
+export const FeaturesUnderlineBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 `;
 
 export const FeatureReviewTitles = styled.div`
@@ -327,11 +342,105 @@ export const VectorLine2 = styled.img`
   stroke: rgba(16, 24, 40, 0.1);
 `;
 
-export const FeatureBox = styled.div`
+export const FeatureTagsBox = styled.div`
   display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   width: 430px;
   height: 200px;
+  gap: 8px;
+`;
+
+export const TxtFieldBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 430px;
+  gap: 24px;
+`;
+
+export const TxtField = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+`;
+
+export const VehicleDetailItem = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
+export const VehicleItemTxt = styled.p`
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33em;
+  margin: 0;
+`;
+
+export const BookingBox = styled.div`
+  ${FeaturesUnderlineBox};
+  padding: 24px;
+`;
+
+export const BookingHeader = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  flex-wrap: wrap;
+  align-self: stretch;
+`;
+
+export const BodyTextBooking = styled.p`
+  ${BodyText}
+  color: #475467;
+`;
+
+export const BookingItem = styled.div`
+  display: flex;
+  padding: 18px 341px 18px 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 10px;
+  background: #f7f7f7;
+`;
+
+export const Input = styled.input`
+  padding: 10px;
+  background: #f7f7f7;
+  border: none;
+  font-weight: 400;
+  line-height: 1.25em;
+`;
+
+export const TextArea = styled.textarea`
+  ${Input};
+`;
+
+export const BookingItemRel = styled.div`
+  ${BookingItem};
+  position: relative;
+`;
+
+export const DatePicker = styled.button`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  cursor: pointer;
+`;
+
+export const DateDropdown = styled.select`
+  display: inline-flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  background: #fff;
 `;
