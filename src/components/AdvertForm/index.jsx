@@ -66,11 +66,7 @@ export const CardTitle = styled.div`
 
 export const H1 = styled.h1`
   margin: 0;
-  color: #101828;
-  color: #101828;
-  font-family: Inter;
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.25em;
 `;
@@ -151,10 +147,6 @@ export const CardAdvert = styled.p`
   color: #475467;
   text-overflow: ellipsis;
   margin: 0;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5em;
 `;
 
 export const SegmentedPicker = styled.div`
@@ -443,4 +435,58 @@ export const DateDropdown = styled.select`
   border-radius: 12px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   background: #fff;
+`;
+
+export const ReviewsContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const ReviewsHeader = styled.div`
+  ${ModalTitleContent};
+  width: 430px;
+`;
+
+export const ReviewsAvatar = styled.div`
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #f2f4f7;
+`;
+
+export const ReviewsAvatarInitial = styled.h1`
+  position: absolute;
+  left: 21px;
+  top: 15px;
+  color: #e44848;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25em;
+`;
+
+export const ReviewerNameRate = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+`;
+
+export const ReviewerName = styled.p`
+  color: #101828;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33em;
+`;
+
+export const ReviewerRate = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+`;
+
+export const ReviewsTxt = styled.p`
+  color: #475467;
 `;
