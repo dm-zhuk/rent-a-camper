@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ModalWindow from './ModalWindow';
 import CardData from './CardData';
 import CardModalData from 'components/Modal/Modal';
 
@@ -23,7 +24,9 @@ const Card = ({ card }) => {
         )}
         {CardData(card)}
       </CardFrame>
-      {showModal && <CardModalData modal={card} onClose={handleModalClose} />}
+      <ModalWindow isOpen={showModal} onClose={handleModalClose}>
+        <CardModalData modal={card} onClose={handleModalClose} />
+      </ModalWindow>
     </>
   );
 };
