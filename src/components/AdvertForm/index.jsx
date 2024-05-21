@@ -248,7 +248,7 @@ export const ModalTitleHolder = styled.div`
   justify-content: space-between;
 `;
 
-export const CloseBtn32 = styled.button`
+export const CloseBtn32 = styled.span`
   width: 32px;
   height: 32px;
   border: none;
