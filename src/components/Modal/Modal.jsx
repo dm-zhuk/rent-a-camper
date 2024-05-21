@@ -53,7 +53,6 @@ import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
 import beds from 'img/beds.svg';
 import ac from 'img/ac.svg';
-import shower from 'img/shower.svg';
 import close from 'img/close.svg';
 import vector_line1 from 'img/vector_line1.svg';
 import vector_line2 from 'img/vector_line2.svg';
@@ -150,10 +149,6 @@ const CardModalData = modal => {
                 <CategoryButton>
                   <IconThumb20 src={hob} alt="hob" />
                   <CategoryText>{modal.details.hob} hob</CategoryText>
-                </CategoryButton>
-                <CategoryButton>
-                  <IconThumb20 src={shower} alt="shower" />
-                  <CategoryText>{modal.details.shower} Shower</CategoryText>
                 </CategoryButton>
               </FeatureTagsBox>
               <TxtFieldBox>

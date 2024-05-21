@@ -90,6 +90,7 @@ export const Favorite = styled(HeartDefaultIcon)`
   height: 24px;
   flex-shrink: 0;
   stroke: #101828;
+  fill: transparent;
   transition: transform 0.3s ease;
   cursor: pointer;
 

@@ -28,7 +28,6 @@ import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
 import beds from 'img/beds.svg';
 import ac from 'img/ac.svg';
-import shower from 'img/shower.svg';
 
 const CardData = advItem => {
   return (
@@ -69,20 +68,16 @@ const CardData = advItem => {
           <CategoryText>{advItem.engine}</CategoryText>
         </CategoryButton>
         <CategoryButton>
+          <IconThumb20 src={ac} alt="AC" />
+          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
+        </CategoryButton>
+        <CategoryButton>
           <IconThumb20 src={kitchen} alt="kitchen" />
           <CategoryText>{advItem.details.kitchen} Kitchen</CategoryText>
         </CategoryButton>
         <CategoryButton>
           <IconThumb20 src={beds} alt="beds qty" />
           <CategoryText>{advItem.details.beds} beds</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={ac} alt="AC" />
-          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={shower} alt="shower" />
-          <CategoryText>{advItem.details.shower} Shower</CategoryText>
         </CategoryButton>
       </SegmentedPicker>
       <Button onClick={ShowMoreModal}>Show more</Button>
