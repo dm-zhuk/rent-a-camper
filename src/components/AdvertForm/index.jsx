@@ -108,7 +108,7 @@ export const ReviewLocationWrapper = styled.div`
   gap: 16px;
 `;
 
-export const IconTextWrapper = styled.p`
+export const IconTextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
