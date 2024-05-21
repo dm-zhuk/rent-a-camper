@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rent-a-camper/static/css/main.fb306f0c.css",
-    "main.js": "/rent-a-camper/static/js/main.cf39e0c1.js",
+    "main.js": "/rent-a-camper/static/js/main.c91a7568.js",
     "static/media/ac.svg": "/rent-a-camper/static/media/ac.14dcad9faf12075b667127a623d3771b.svg",
     "static/media/van_alcove.svg": "/rent-a-camper/static/media/van_alcove.18c3fc427a5298ec63b29e3a479b76ac.svg",
     "static/media/van.svg": "/rent-a-camper/static/media/van.3ce28d32377756f50addaec87f9c46e6.svg",
@@ -27,10 +27,10 @@
     "static/media/vector_line1.svg": "/rent-a-camper/static/media/vector_line1.bce5680db2a1b024953a78fd996fdbc7.svg",
     "static/media/vector_line2.svg": "/rent-a-camper/static/media/vector_line2.8f9feb87da0a2b2902413d5085699132.svg",
     "main.fb306f0c.css.map": "/rent-a-camper/static/css/main.fb306f0c.css.map",
-    "main.cf39e0c1.js.map": "/rent-a-camper/static/js/main.cf39e0c1.js.map"
+    "main.c91a7568.js.map": "/rent-a-camper/static/js/main.c91a7568.js.map"
   },
   "entrypoints": [
     "static/css/main.fb306f0c.css",
-    "static/js/main.cf39e0c1.js"
+    "static/js/main.c91a7568.js"
   ]
 }
