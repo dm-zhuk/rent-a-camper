@@ -1,7 +1,7 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { SharedPageCtnr, HeaderStyles } from './index';
 import styled from '@emotion/styled';
-import HeaderStyles from './index';
 
 const Header = styled.header`
   ${HeaderStyles}
@@ -60,11 +60,9 @@ const SharedLayout = () => {
         </address>
       </Header>
 
-      <section className="homeSection">
-        <Suspense fallback={<h2>Loading...</h2>}>
-          <Outlet />
-        </Suspense>
-      </section>
+      <SharedPageCtnr>
+        <Outlet />
+      </SharedPageCtnr>
     </>
   );
 };

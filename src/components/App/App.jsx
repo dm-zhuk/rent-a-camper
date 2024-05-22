@@ -1,5 +1,4 @@
-/* import React from 'react';
-import { MainContainer, LeftSection, RightSection } from './index';
+/* import { MainContainer, LeftSection, RightSection } from './index';
 import AdvertForm from 'components/AdvertForm/AdvertForm';
 import CitySearch from 'components/CitySearch/CitySearch';
 
@@ -14,13 +13,11 @@ const App = () => {
       </RightSection>
     </MainContainer>
   );
-};
+}; */
 
-export default App; */
-
-import { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
 import 'normalize.css';
+import { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import SharedLayout from 'layouts/SharedLayout';
 import NotFoundPage from 'pages/NotFoundPage';
