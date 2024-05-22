@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from '@emotion/styled';
 import { ReactComponent as HeartDefaultIcon } from 'img/heartDefault.svg';
 
