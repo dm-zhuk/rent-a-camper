@@ -13,7 +13,7 @@ import { CardsContainer, CardContainer, LoadMore } from './index';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
-  const cards = useSelector(selectAdvert);
+  const items = useSelector(selectAdvert);
   const isLoading = useSelector(selectLoader);
   const error = useSelector(selectError);
   const perPage = 4;
@@ -33,7 +33,7 @@ const AdvertForm = () => {
   const endIndex = startIndex + perPage;
 
   const renderedCards =
-    cards && Object.values(cards).slice(startIndex, endIndex);
+    items && Object.values(items).slice(startIndex, endIndex);
 
   return (
     <>
@@ -46,7 +46,7 @@ const AdvertForm = () => {
               <Card card={card} />
             </MemoizedCardContainer>
           ))}
-        {Object.values(cards).length > endIndex && (
+        {Object.values(items).length > endIndex && (
           <LoadMore onClick={handleLoadMore}>Load more</LoadMore>
         )}
       </CardsContainer>

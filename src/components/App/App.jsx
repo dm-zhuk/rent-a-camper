@@ -16,11 +16,12 @@ const App = () => {
 }; */
 
 import 'normalize.css';
+import React from 'react';
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
-import SharedLayout from 'layouts/SharedLayout';
-import NotFoundPage from 'pages/NotFoundPage';
+import Loader from 'components//Loader/Loader';
+import SharedLayout from '../../layouts/SharedLayout';
+import NotFoundPage from '../../pages/NotFoundPage';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const CatalogPage = lazy(() => import('pages/CatalogPage'));
@@ -32,8 +33,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

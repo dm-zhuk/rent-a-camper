@@ -16,6 +16,10 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 1.25em;
   color: rgba(16, 24, 40, 0.6);
+  transform: translateY(-50%);
+  left: 1rem;
+  z-index: 1;
+  margin-right: 24px;
 `;
 
 export const H2 = styled.h2`
@@ -93,7 +97,7 @@ export const TextInputContainer = styled.div`
 
 /* Filters */
 
-export const NumberInputContainer = styled.div`
+export const CheckBoxContainer = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -104,7 +108,7 @@ export const VectorLine = styled.img`
   width: 302px;
 `;
 
-export const NumberInput = styled.div`
+export const CheckRadioInput = styled.div`
   display: flex;
   width: 360px;
   flex-direction: column;
@@ -119,25 +123,46 @@ export const FiltersContainer = styled.div`
   gap: 10px;
 `;
 
-export const FiltersButton = styled.button`
+export const CheckRadioLabel = styled.label`
   display: flex;
   height: 95px;
   width: 95px;
+  font-weight: 500;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.2);
-  background-color: #fff;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
   mix-blend-mode: multiply;
+  user-select: none;
   cursor: pointer;
 
   &:focus,
   &:hover {
+    border-color: #e44848;
+  }
+`;
+
+export const FiltersTypeInput = styled.input`
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  padding: 0;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  &:checked,
+  &${CheckRadioLabel} {
     border: 1px solid #e44848;
   }
 `;
 
-export const ContentBox = styled.div`
+export const ContentBox = styled.label`
   display: flex;
   flex-direction: column;
   justify-content: center;

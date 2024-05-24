@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/styled';
+import css from '@emotion/styled';
 
 export const SharedPageCtnr = styled.section`
   flex: 1;
   padding: 1rem;
 `;
 
-export const headerStyles = css`
+export const HeaderStyles = css`
   .header {
     position: fixed;
     z-index: 9;

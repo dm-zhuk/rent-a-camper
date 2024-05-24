@@ -1,12 +1,39 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { advertReducer } from './advertSlice';
-// import { filterReducer } from './filterSlice';
+import { favoritesReducer } from './favorSlice';
+import storage from 'redux-persist/lib/storage';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
-const store = configureStore({
-  reducer: {
-    advert: advertReducer,
-    // filter: filterReducer,
-  },
+const rootReducer = combineReducers({
+  advert: advertReducer,
+  favorites: favoritesReducer,
 });
 
-export default store;
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['favorites'],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+
+export const persistor = persistStore(store);

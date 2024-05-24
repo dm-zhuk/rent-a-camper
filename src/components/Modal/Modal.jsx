@@ -1,4 +1,5 @@
 import React from 'react';
+import BasicDatePicker from '../../helpers/DatePicker';
 // import ShowReviews from '../../helpers/ShowReviews';
 import {
   ImgThumb,
@@ -213,6 +214,13 @@ const CardModalData = modal => {
                       }}
                     />
                   </BookingItem>
+                  {/* 
+                  <BookingItemRel>
+                    <BasicDatePicker></BasicDatePicker>
+                    <DatePicker>
+                      <IconThumb20 src={calendar} alt="calendar" />
+                    </DatePicker>
+                  </BookingItemRel> */}
                   <BookingItemRel>
                     <Input
                       type="text"
@@ -237,7 +245,8 @@ const CardModalData = modal => {
                     />
                   </BookingItem>
                 </TxtField>
-                <Button>Send</Button> {/*  onClick={handleSubmit} */}
+                <Button type="button" text="Send"></Button>
+                {/*  onClick={handleSubmit} */}
               </BookingBox>
             </FeatureReviewHorBox>
           </FeatureReviewVerBox>

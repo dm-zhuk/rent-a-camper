@@ -15,7 +15,7 @@ const ShowMoreModal = ({ advItem }) => {
 
   return (
     <>
-      <Button onClick={handleOpen}>Show more</Button>
+      <Button type="button" text="Show more" onClick={handleOpen}></Button>
       {isOpen && (
         <button onClick={handleClose}>{advItem.name}</button>
         // {CardModalData(data)}

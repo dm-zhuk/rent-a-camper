@@ -8,11 +8,11 @@ import {
   Map,
   TextField,
   TextInputContainer,
-  NumberInputContainer,
+  CheckBoxContainer,
   VectorLine,
   FiltersContainer,
-  NumberInput,
-  FiltersButton,
+  CheckRadioInput,
+  FiltersTypeInput,
   ContentBox,
   ContentImg,
   BodyText,
@@ -65,73 +65,73 @@ const CitySearch = () => {
         </TextInputContainer>
         <Label htmlFor="details">Filters</Label>
       </InputForm>
-      <NumberInputContainer>
+      <CheckBoxContainer>
         <H2>Vehicle equipment</H2>
         <VectorLine src={vector_line} alt="line" />
-        <NumberInput>
+        <CheckRadioInput>
           <FiltersContainer>
-            <FiltersButton onClick={handleClick}>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={ac} alt="AC" />
                 <BodyText>AC</BodyText>
               </ContentBox>
-            </FiltersButton>
-            <FiltersButton onClick={handleClick}>
+            </FiltersTypeInput>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={automatic} alt="Automatic" />
                 <BodyText>Automatic</BodyText>
               </ContentBox>
-            </FiltersButton>
-            <FiltersButton onClick={handleClick}>
+            </FiltersTypeInput>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={kitchen} alt="Kitchen" />
                 <BodyText>Kitchen</BodyText>
               </ContentBox>
-            </FiltersButton>
+            </FiltersTypeInput>
           </FiltersContainer>
           <FiltersContainer>
-            <FiltersButton onClick={handleClick}>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={tv} alt="TV" />
                 <BodyText>TV</BodyText>
               </ContentBox>
-            </FiltersButton>
-            <FiltersButton onClick={handleClick}>
+            </FiltersTypeInput>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={shower} alt="Shower/WC" />
                 <BodyText>Shower/WC</BodyText>
               </ContentBox>
-            </FiltersButton>
+            </FiltersTypeInput>
           </FiltersContainer>
-        </NumberInput>
-      </NumberInputContainer>
-      <NumberInputContainer>
+        </CheckRadioInput>
+      </CheckBoxContainer>
+      <CheckBoxContainer>
         <H2>Vehicle type</H2>
         <VectorLine src={vector_line} alt="line" />
-        <NumberInput>
+        <CheckRadioInput>
           <FiltersContainer>
-            <FiltersButton onClick={handleClick}>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={van} alt="Van" />
                 <BodyText>Van</BodyText>
               </ContentBox>
-            </FiltersButton>
-            <FiltersButton onClick={handleClick}>
+            </FiltersTypeInput>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={van_fully_intg} alt="Fully Integrated" />
                 <BodyText>Fully Integrated</BodyText>
               </ContentBox>
-            </FiltersButton>
-            <FiltersButton onClick={handleClick}>
+            </FiltersTypeInput>
+            <FiltersTypeInput onClick={handleClick}>
               <ContentBox>
                 <ContentImg src={van_alcove} alt="Alcove" />
                 <BodyText>Alcove</BodyText>
               </ContentBox>
-            </FiltersButton>
+            </FiltersTypeInput>
           </FiltersContainer>
-        </NumberInput>
-        <Button onClick={handleSearch}>Search</Button>
-      </NumberInputContainer>
+        </CheckRadioInput>
+        <Button type="button" text="Search" onClick={handleSearch}></Button>
+      </CheckBoxContainer>
     </LeftSection>
   );
 };

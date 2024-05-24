@@ -68,10 +68,6 @@ const CardData = advItem => {
           <CategoryText>{advItem.engine}</CategoryText>
         </CategoryButton>
         <CategoryButton>
-          <IconThumb20 src={ac} alt="AC" />
-          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
           <IconThumb20 src={kitchen} alt="kitchen" />
           <CategoryText>{advItem.details.kitchen} Kitchen</CategoryText>
         </CategoryButton>
@@ -79,8 +75,12 @@ const CardData = advItem => {
           <IconThumb20 src={beds} alt="beds qty" />
           <CategoryText>{advItem.details.beds} beds</CategoryText>
         </CategoryButton>
+        <CategoryButton>
+          <IconThumb20 src={ac} alt="AC" />
+          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
+        </CategoryButton>
       </SegmentedPicker>
-      <Button onClick={ShowMoreModal}>Show more</Button>
+      <Button type="button" text="Show more" onClick={ShowMoreModal}></Button>
     </CardContent>
   );
 };
