@@ -71,7 +71,7 @@ export const AdvertFullText = styled.p`
   margin: 0;
 `;
 
-export const FeatureReviewVerBox = styled.div`
+export const FeatureReviewVertBox = styled.div`
   display: flex;
   height: 740px;
   flex-direction: column;

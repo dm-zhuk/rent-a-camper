@@ -1,68 +1,85 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { SharedPageCtnr, HeaderStyles } from './index';
-import styled from '@emotion/styled';
-
-const Header = styled.header`
-  ${HeaderStyles}
-`;
+import styles from './index.module.css';
+import favicon from '../img/favicon.svg';
 
 const SharedLayout = () => {
   return (
     <>
-      <Header>
-        <nav className="header-nav">
-          <img
-            src="../img//favicon.png"
-            alt="Logo"
-            width="30"
-            height="24"
-          ></img>
-          <a className="header-logo link" href="./index.html">
-            RENT-A-<span className="header-logo-accent">CAMPER</span>
-          </a>
+      <div className={styles.sharedHeader}>
+        <div className={styles.headerContainer}>
+          <div className={styles.headerNav}>
+            <img src={favicon} alt="Logo" width="36" height="auto" />
+            <NavLink to="/" className={styles.headerLogo}>
+              RENT-A-<span className={styles.headerLogoAccent}>CAMPER</span>
+            </NavLink>
 
-          <ul className="header-nav-list list">
-            <li className="header-nav-item">
-              <NavLink to="/" className="nav-item-link link current">
-                Home
-              </NavLink>
-            </li>
-            <li className="header-nav-item">
-              <NavLink to="/catalog" className="nav-item-link link">
-                Catalog
-              </NavLink>
-            </li>
-            <li className="header-nav-item">
-              <NavLink to="/favorites" className="nav-item-link link">
-                Favorites
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+            <ul className={styles.headerNavList}>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/catalog"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
+                  Catalog
+                </NavLink>
+              </li>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/favorites"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
+                  Favorites
+                </NavLink>
+              </li>
+            </ul>
+          </div>
 
-        <address className="header-contacts">
-          <ul className="header-contacts-list list">
-            <li>
-              <a
-                className="header-contacts-link link"
-                href="mailto:info@camperrental.com"
-              >
-                info@camperrental.com
-              </a>
-            </li>
-            <li>
-              <a className="header-contacts-link link" href="tel:+380631234567">
-                +380 (63) 123-45-67
-              </a>
-            </li>
-          </ul>
-        </address>
-      </Header>
+          <div className={styles.headerContacts}>
+            <ul className={styles.headerContactsList}>
+              <li>
+                <a
+                  href="mailto:info@camperrental.com"
+                  className={styles.headerContactsLink}
+                >
+                  info@camperrental.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+380631234567"
+                  className={styles.headerContactsLink}
+                >
+                  +380 (63) 123-45-67
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-      <SharedPageCtnr>
+      <div className={styles.sharedPageCtnr}>
         <Outlet />
-      </SharedPageCtnr>
+      </div>
     </>
   );
 };

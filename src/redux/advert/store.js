@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { advertReducer } from './advertSlice';
 import { favoritesReducer } from './favorSlice';
+import { paginationReducer } from './paginationSlice';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -14,8 +15,9 @@ import {
 } from 'redux-persist';
 
 const rootReducer = combineReducers({
-  advert: advertReducer,
+  adverts: advertReducer,
   favorites: favoritesReducer,
+  pagination: paginationReducer,
 });
 
 const persistConfig = {

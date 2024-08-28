@@ -1,12 +1,14 @@
 import React from 'react';
-import { CloseBtn32 } from 'components/AdvertForm/index';
+import styles from 'components/AdvertForm/index.module.css';
 
 const ModalWindow = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
     <div>
-      <CloseBtn32 onClick={onClose}>&times;</CloseBtn32>
+      <button type="button" className={styles.closeBtn32} onClick={onClose}>
+        &times;
+      </button>
       {children}
     </div>
   );

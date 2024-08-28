@@ -1,21 +1,18 @@
-/* import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectFavorites } from '../redux/advert/selectors';
+import styles from 'components/App/index.module.css';
+import AdvertForm from 'components/AdvertForm/AdvertForm';
+import AdvertFilter from 'components/AdvertFilter/AdvertFilter';
 
 const FavoritesPage = () => {
-  const favorites = useSelector(selectFavorites);
-  const [filteredAdverts, setFilteredAdverts] = useState(favorites);
-
   return (
-    <>
-      <CardFilters
-        adverts={favorites}
-        setFilteredAdverts={setFilteredAdverts}
-      />
-      <CardsList data={filteredAdverts} />
-    </>
+    <div className={styles.mainContainer}>
+      <section className={styles.leftSection}>
+        <AdvertFilter />
+      </section>
+      <section className={styles.rightSection}>
+        <AdvertForm />
+      </section>
+    </div>
   );
 };
 
 export default FavoritesPage;
- */

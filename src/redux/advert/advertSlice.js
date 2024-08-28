@@ -3,6 +3,7 @@ import { fetchAll } from './operations';
 
 const initialState = {
   items: [],
+  filter: [],
   isLoading: false,
   error: null,
 };
@@ -17,13 +18,19 @@ const handleError = (state, action) => {
 };
 
 const advertSlice = createSlice({
-  name: 'advert',
+  name: 'adverts',
   initialState,
+  reducers: {
+    filteredAdverts(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchAll.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = action.payload;
+        state.filter = action.payload;
         state.error = null;
       })
       .addMatcher(
@@ -42,4 +49,5 @@ const advertSlice = createSlice({
   },
 });
 
+export const { filteredAdverts } = advertSlice.actions;
 export const advertReducer = advertSlice.reducer;
